@@ -7,8 +7,8 @@ const app = express();
 
 // ✅ Correct middleware usage
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
+//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded());
 const UserRoute = require('./routes/UserRoute');
 const ProductRouter =  require('./routes/ProductRouter');
 const CustomerRouter = require('./routes/CustomerRouter');
