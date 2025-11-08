@@ -10,8 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const PORT = process.env.SERVER_PORT || 3000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/pos-system';
-
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://nawodyadb:Nikeshi%401234@devopscluster.oc3i8e4.mongodb.net/pos_system_devops?retryWrites=true&w=majority&appName=devopscluster'
 // ✅ Fix: Proper promise chaining and route placement
 mongoose.connect(MONGO_URI)
   .then(() => {
