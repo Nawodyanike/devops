@@ -19,7 +19,7 @@ const signup = async (req, res) => {
         });
         res.status(201).json({'message': 'User created successfully', data: savedUser});
     }
-    catch (e)
+    catch (e)   
     {
         res.status(500).json({'message': 'signup error', 'error': e});
         
