@@ -9,6 +9,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const UserRoute = require('./routes/UserRoute');
+const ProductRouter =  require('./routes/ProductRouter');
+const CustomerRouter = require('./routes/CustomerRouter');
+const OrderRoute = require('./routes/OrderRoute');  
+
 const PORT = process.env.SERVER_PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://nawodyadb:Nikeshi%401234@devopscluster.oc3i8e4.mongodb.net/pos_system_devops?retryWrites=true&w=majority&appName=devopscluster'
 // ✅ Fix: Proper promise chaining and route placement
@@ -29,3 +34,8 @@ mongoose.connect(MONGO_URI)
 app.get('/test', (req, res) => {
   res.json({ message: 'API is working' });
 });
+
+app.use('/api/v1/users', UserRoute);
+app.use('/api/v1/products', ProductRouter);
+app.use('/api/v1/customers', CustomerRouter);
+app.use('/api/v1/orders', OrderRoute);  
